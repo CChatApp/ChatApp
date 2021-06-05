@@ -1,0 +1,20 @@
+// This file is generated automatically and uses types as in Python
+// For example, ``Tuple[int, int]`` is typing.Tuple, (int(), int()).
+// The CRC32 of each method is method name + @ + method signature, for instance: ``PG@p:bytes g:bytes->PG`` will produce the CRC32 0x5323a87c
+
+////////////////////////////////////////////
+/////////////        errors     ////////////
+////////////////////////////////////////////
+BadRequest#0x396c3773 desc:str->BadRequest;
+NoSuchMethod#0x6fbe0787 desc:str->NoSuchMethod;
+
+////////////////////////////////////////////
+/////////////         types     ////////////
+////////////////////////////////////////////
+PG#0x5323a87c p:bytes g:bytes->PG;
+
+////////////////////////////////////////////
+/////////////       methods     ////////////
+////////////////////////////////////////////
+GetPG#0xe6d7921a->PG;
+
