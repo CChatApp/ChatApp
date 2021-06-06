@@ -1,4 +1,4 @@
-from unittest import TestCase
+from unittest import TestCase, main
 from ChatApp.utils.bytes import Bytes
 
 
@@ -7,3 +7,4 @@ class TestBytes(TestCase):
         class A(Bytes):
             pass
         self.assertRaises(TypeError, A)
+

@@ -21,7 +21,7 @@ def gen_signature(_c, **kwargs):
         f_signature += " "
     f_signature = f_signature[:-1]
     if sign.return_annotation != empty:
-        f_signature += "->"
+        f_signature += " -> "
         if kwargs.get("retval") == 1:
             f_signature += str(sign.return_annotation)\
                 if not getattr(sign.return_annotation, "__qualname__", None)\
