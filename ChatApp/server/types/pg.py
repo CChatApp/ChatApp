@@ -8,4 +8,4 @@ class PG(Bytes, metaclass=CRC, p=1, g=1, retval=1):
         self.g = g
 
     def write(self):
-        return "PG({}, {})".format(self.p, self.g)
+        return "types.PG({}, {})".format(self.p, self.g)

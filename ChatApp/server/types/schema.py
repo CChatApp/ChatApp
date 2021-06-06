@@ -8,4 +8,4 @@ class Schema(Bytes, metaclass=CRC, schema=1, layer=1, retval=1):
         self.layer = layer
 
     def write(self):
-        return f'Schema("{self.schema}",{self.layer})'
+        return f'types.Schema("{self.schema}",{self.layer})'
