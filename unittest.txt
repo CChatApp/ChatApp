@@ -4,6 +4,6 @@ test_gen_signature (test_utils.test_gen_signature.TestGenSignature) ... ok
 test_find_primitive_root (test_utils.test_primitive_root.TestFindPrimitiveRoot) ... ok
 
 ----------------------------------------------------------------------
-Ran 4 tests in 0.051s
+Ran 4 tests in 0.048s
 
 OK

@@ -3,7 +3,7 @@ from ChatApp.utils.bytes import Bytes
 
 
 class PG(Bytes, metaclass=CRC, p=1, g=1, retval=1):
-    def __init__(self, p: bytes, g: bytes) -> "PG":
+    def __init__(self, p: bytes, g: bytes) -> "types.PG":
         self.p = p
         self.g = g
 

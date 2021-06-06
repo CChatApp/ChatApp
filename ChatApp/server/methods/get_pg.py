@@ -1,4 +1,3 @@
-from struct import pack
 from pyDH import DiffieHellman
 from ChatApp.utils.gen_crc_32 import CRC
 from ..errors.bad_request import BadRequest
@@ -11,7 +10,7 @@ def int_to_bytes(i: int, *, signed: bool = False) -> bytes:
 
 
 class GetPG(metaclass=CRC, retval=1):
-    def __init__(self) -> PG: pass
+    def __init__(self) -> "types.PG": pass
 
     @staticmethod
     def handle(data, transport):

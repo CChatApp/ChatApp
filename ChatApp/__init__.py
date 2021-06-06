@@ -1,8 +1,9 @@
 from typing import _GenericAlias as GenericAlias, _type_repr as type_repr
-from os import getcwd, path, walk
+from os import getcwd, path, walk, linesep
 from importlib import import_module
 from ChatApp.utils.gen_crc_32 import CRC
 from pathlib import Path
+from ChatApp.config import layer
 
 
 def __repr__(self):
@@ -28,18 +29,22 @@ def visit(directory, s):
                     s[Path(getattr(module, i).__module__).stem.split(".")[-1]].add(getattr(module, i))
 
 
+schema = []
+
 with open(path.join(getcwd(), "schema"), "w") as f:
-    f.write("// This file is generated automatically and uses types as in Python\n"
-            "// For example, ``Tuple[int, int]`` is typing.Tuple, (int(), int()).\n"
+    f.write(f"// ChatApp schema layer {layer}.{linesep}"
+            f"// This file is generated automatically and uses types as in Python{linesep}"
+            f"// For example, ``Tuple[int, int]`` is typing.Tuple, (int(), int()).{linesep}"
             "// The CRC32 of each method is method name + @ + method signature, for instance: "
-            "``PG@p:bytes g:bytes->PG`` will produce the CRC32 0x5323a87c\n\n")
+            f"``PG@p:bytes g:bytes -> PG`` will produce the CRC32 0x45e27682{linesep}{linesep}")
     cls = {}
     for i in ("errors", "types", "methods"):
         cls[i] = set()
         visit(i, cls)
-        f.write(f"////////////////////////////////////////////\n"
-                f"/////////////      {i:>8}     ////////////\n"
-                f"////////////////////////////////////////////\n")
+        f.write(f"////////////////////////////////////////////{linesep}"
+                f"/////////////      {i:>8}     ////////////{linesep}"
+                f"////////////////////////////////////////////{linesep}")
         for c in cls[i]:
-            f.write(c.signature + ";\n")
-        f.write("\n")
+            schema.append(i + "." + c.signature)
+            f.write(i + "." + c.signature + f";{linesep}")
+        f.write(linesep)

@@ -1,7 +1,7 @@
-from config import address, port
+from ChatApp.config import address, port
 from asyncio import get_event_loop, Protocol
-from .server.errors import bad_request, no_such_method
-from .server import Mix
+from ChatApp.server.errors import bad_request, no_such_method
+from ChatApp.server.methods import Mix
 
 
 def handle(method, rest_of_data):
@@ -31,6 +31,7 @@ class TCP(Protocol):
         except ValueError:
             return self.transport.write(bad_request.BadRequest("Bad Packet").bytes)
         if method not in Mix.HANDLERS:
+            print(Mix.HANDLERS)
             return self.transport.write(no_such_method.NoSuchMethod("There is no method {}".format(hex(method))).bytes)
         return Mix.HANDLERS[method](packet, self.transport)
 

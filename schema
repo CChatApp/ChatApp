@@ -1,20 +1,24 @@
+// ChatApp schema layer 1.
 // This file is generated automatically and uses types as in Python
 // For example, ``Tuple[int, int]`` is typing.Tuple, (int(), int()).
-// The CRC32 of each method is method name + @ + method signature, for instance: ``PG@p:bytes g:bytes->PG`` will produce the CRC32 0x5323a87c
+// The CRC32 of each method is method name + @ + method signature, for instance: ``PG@p:bytes g:bytes -> PG`` will produce the CRC32 0x45e27682
 
 ////////////////////////////////////////////
 /////////////        errors     ////////////
 ////////////////////////////////////////////
-BadRequest#0xef8482f1 desc:str -> BadRequest;
-NoSuchMethod#0x1c5c893a desc:str -> NoSuchMethod;
+errors.NoSuchMethod#0xd50e44de desc:str -> errors.NoSuchMethod;
+errors.BadRequest#0x3997e906 desc:str -> errors.BadRequest;
 
 ////////////////////////////////////////////
 /////////////         types     ////////////
 ////////////////////////////////////////////
-PG#0x45e27682 p:bytes g:bytes -> PG;
+types.PG#0x58c56d27 p:bytes g:bytes -> types.PG;
+types.Schema#0xae84c669 schema:str layer:int -> types.Schema;
 
 ////////////////////////////////////////////
 /////////////       methods     ////////////
 ////////////////////////////////////////////
-GetPG#0xb049d6e5 -> PG;
+methods.Mix#0x1476e26c -> 'types.PG';
+methods.GetPG#0x1476e26c -> types.PG;
+methods.GetSchema#0x12345678 -> types.Schema;
 
