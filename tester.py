@@ -4,6 +4,7 @@ import datetime
 
 class TextTestResult(unittest.TextTestResult):
     def startTest(self, test):
+        unittest.TestResult.startTest(self, test)
         if self.showAll:
             self.stream.write(f"[{datetime.datetime.now()}] ")
             self.stream.write(self.getDescription(test))
