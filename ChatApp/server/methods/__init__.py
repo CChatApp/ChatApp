@@ -16,4 +16,5 @@ class Mix(
     GetSchema,
     metaclass=Meta
 ):
+    __ignore_schema__ = True
     HANDLERS = {}

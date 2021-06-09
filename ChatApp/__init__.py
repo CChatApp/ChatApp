@@ -25,6 +25,8 @@ def visit(directory, s):
                 continue
             module = import_module(path.relpath(directory, ".").replace("/", ".") + "." + file.replace(".py", ""))
             for i in dir(module):
+                if getattr(getattr(module, i, None), "__ignore_schema__", None):
+                    continue
                 if isinstance(getattr(module, i), CRC):
                     s[Path(getattr(module, i).__module__).stem.split(".")[-1]].add(getattr(module, i))
 
