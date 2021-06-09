@@ -18,7 +18,6 @@ types.Schema#0xae84c669 schema:str layer:int -> types.Schema;
 ////////////////////////////////////////////
 /////////////       methods     ////////////
 ////////////////////////////////////////////
-methods.Mix#0x1476e26c -> 'types.PG';
 methods.GetPG#0x1476e26c -> types.PG;
 methods.GetSchema#0x12345678 -> types.Schema;
 
