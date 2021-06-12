@@ -3,9 +3,11 @@ from ChatApp.utils.bytes import Bytes
 
 
 class PG(Bytes, metaclass=CRC, p=1, g=1, retval=1):
-    def __init__(self, p: bytes, g: bytes) -> "types.PG":
+    __qualname__ = "types.PG"
+
+    def __init__(self, p: bytes, g: bytes) -> __qualname__:
         self.p = p
         self.g = g
 
     def write(self):
-        return "types.PG({}, {})".format(self.p, self.g)
+        return f"{PG.__qualname__}({self.p}, {self.g})"

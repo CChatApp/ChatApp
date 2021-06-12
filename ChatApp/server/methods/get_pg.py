@@ -10,11 +10,13 @@ def int_to_bytes(i: int, *, signed: bool = False) -> bytes:
 
 
 class GetPG(metaclass=CRC, retval=1):
+    __qualname__ = "methods.GetPG"
+
     def __init__(self) -> "types.PG": pass
 
     @staticmethod
-    def handle(data, transport):
+    def handle(data, protocol):
         dh = DiffieHellman()
         if data:
-            return transport.write(BadRequest("Bad Packet").bytes)
-        transport.write(PG(int_to_bytes(dh.p), int_to_bytes(dh.g)).bytes)
+            return protocol.send(BadRequest("Bad Packet").bytes)
+        protocol.send(PG(int_to_bytes(dh.p), int_to_bytes(dh.g)).bytes)

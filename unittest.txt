@@ -1,9 +1,23 @@
-[2021-06-09 18:11:03.613647] test_bytes (tests.test_utils.test_bytes.TestBytes) ... ok
-[2021-06-09 18:11:03.613804] test_CRC (tests.test_utils.test_gen_crc_32.TestCRC) ... ok
-[2021-06-09 18:11:03.613929] test_gen_signature (tests.test_utils.test_gen_signature.TestGenSignature) ... ok
-[2021-06-09 18:11:03.614050] test_find_primitive_root (tests.test_utils.test_primitive_root.TestFindPrimitiveRoot) ... ok
+[2021-06-13 02:14:17.587238] test_bytes (tests.test_utils.test_bytes.TestBytes) ... ok
+[2021-06-13 02:14:17.587350] test_gen_auth_key (tests.test_utils.test_gen_auth_key.TestGenAuthKey) ... ok
+[2021-06-13 02:14:17.636210] test_CRC (tests.test_utils.test_gen_crc_32.TestCRC) ... ok
+[2021-06-13 02:14:17.636395] test_gen_signature (tests.test_utils.test_gen_signature.TestGenSignature) ... ok
+[2021-06-13 02:14:17.636574] test_find_primitive_root (tests.test_utils.test_primitive_root.TestFindPrimitiveRoot) ... ok
 
 ----------------------------------------------------------------------
-Ran 0 tests in 0.050s
+Ran 5 tests in 0.097s
 
 OK
+errors.IPIsBlocked
+errors.BadRequest
+errors.NoSuchMethod
+types.PG
+types.SchemaArg
+types.SchemaRow
+types.Schema
+methods.GetPG
+methods.GetSchema
+GetTemporaryAuthKey
+Mix
+Mix
+Test

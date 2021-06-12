@@ -5,13 +5,15 @@ from ChatApp import schema, layer
 
 
 class GetSchema(metaclass=CRC, retval=1):
+    __qualname__ = "methods.GetSchema"
+
     def __init__(self) -> "types.Schema": pass
 
     ID = hex(0x12345678)
 
     @staticmethod
-    def handle(data, transport):
+    def handle(data, protocol):
         if data:
-            return transport.write(BadRequest("Bad Packet").bytes)
+            return protocol.send(BadRequest("Bad Packet").bytes)
 
-        return transport.write(Schema(";".join(schema), layer).bytes)
+        return protocol.send(Schema(schema, layer).bytes)

@@ -6,18 +6,22 @@
 ////////////////////////////////////////////
 /////////////        errors     ////////////
 ////////////////////////////////////////////
-errors.NoSuchMethod#0xd50e44de desc:str -> errors.NoSuchMethod;
-errors.BadRequest#0x3997e906 desc:str -> errors.BadRequest;
+errors.BadRequest#0x531b1757 desc:str -> errors.BadRequest;
+errors.IPIsBlocked#0x836c53f3 desc:str -> errors.IPIsBlocked;
+errors.NoSuchMethod#0x23b42dc2 desc:str -> errors.NoSuchMethod;
 
 ////////////////////////////////////////////
 /////////////         types     ////////////
 ////////////////////////////////////////////
-types.PG#0x58c56d27 p:bytes g:bytes -> types.PG;
-types.Schema#0xae84c669 schema:str layer:int -> types.Schema;
+types.PG#0x915e45ec p:bytes g:bytes -> types.PG;
+types.Schema#0x340b330b schema:str layer:int -> types.Schema;
+types.SchemaArg#0xcf6004b7 name:str type:str default:Any=None -> types.SchemaArg;
+types.SchemaRow#0x1feb367c name:str id:str params:List[types.SchemaArg]=[] -> types.SchemaRow;
 
 ////////////////////////////////////////////
 /////////////       methods     ////////////
 ////////////////////////////////////////////
-methods.GetPG#0x1476e26c -> types.PG;
+GetTemporaryAuthKey#0xf7eccf77 -> bytes;
+methods.GetPG#0xaee35621 -> types.PG;
 methods.GetSchema#0x12345678 -> types.Schema;
 

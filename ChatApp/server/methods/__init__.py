@@ -1,6 +1,7 @@
 from ChatApp.utils.gen_crc_32 import CRC
 from ChatApp.server.methods.get_pg import GetPG
 from ChatApp.server.methods.get_schama import GetSchema
+from ChatApp.server.methods.get_temporary_authkey import GetTemporaryAuthKey
 
 
 class Meta(CRC):
@@ -14,6 +15,7 @@ class Meta(CRC):
 class Mix(
     GetPG,
     GetSchema,
+    GetTemporaryAuthKey,
     metaclass=Meta
 ):
     __ignore_schema__ = True

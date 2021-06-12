@@ -4,9 +4,9 @@ from ChatApp.utils.bytes import Bytes
 
 class NoSuchMethod(Bytes, metaclass=CRC, desc=1, retval=1):
     CODE = 404
-    __qualname__ = "NoSuchMethod"
+    __qualname__ = "errors.NoSuchMethod"
 
-    def __init__(self, desc: str) -> "errors.NoSuchMethod":
+    def __init__(self, desc: str) -> __qualname__:
         self.desc = desc
 
     def write(self):
